@@ -12,13 +12,11 @@ html{
 }
 
 body{
-    background: #000;
     color: #fff;
 }
 
 .main{
     margin: 350px 0 0 0;
-    border: 1px solid #fff;
 }
 
 .container{
@@ -31,4 +29,5 @@ body{
     text-align: center;
     font-size: 10rem;
     color: #fff;
+    /* box-shadow: 2px 2px 2px 1px #000; */
 }

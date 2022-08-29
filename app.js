@@ -2,6 +2,7 @@ let timeContainer = document.querySelector(".time");
 let monthContainer = document.querySelector('.month');
 let daysOfWeek = document.querySelector('.days-of-week');
 let todayContainer = document.querySelector('.today');
+let background = document.getElementById('bg');
 
 let intervalId = setInterval(() => {
     let time = new Date();
@@ -15,7 +16,28 @@ let intervalId = setInterval(() => {
     setDay(todayDay);
     setDayOfWeek(dayOfWeek);
     addZeroToTime(hour, minute, second);
+    setBg(hour);
 }, 900)
+
+function setBg(hour) {
+    if (hour >= 4 && hour < 10) {
+        background.style.background = "url(./img/morning1.jpeg)";
+        background.style.backgroundSize = "1685px 950px";
+        background.style.backgroundRepeat = "no-repeat";
+    } else if (hour >= 10 && hour < 14) {
+        background.style.background = "url(./img/poldink.jpg)";
+        background.style.backgroundSize = "1685px 950px";
+        background.style.backgroundRepeat = "no-repeat";
+    } else if (hour >= 14 && hour < 18) {
+        background.style.background = "url(./img/evening.png)";
+        background.style.backgroundSize = "1685px 950px";
+        background.style.backgroundRepeat = "no-repeat";
+    } else {
+        background.style.background = "url(./img/night.png)";
+        background.style.backgroundSize = "1685px 950px";
+        background.style.backgroundRepeat = "no-repeat";
+    }
+}
 
 function setDay(today) {
     todayContainer.innerHTML = `${today}`
