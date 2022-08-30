@@ -4,9 +4,11 @@ let daysOfWeek = document.querySelector('.days-of-week');
 let todayContainer = document.querySelector('.today');
 let background = document.getElementById('bg');
 let titleTime = document.getElementById('titleTime');
+let inputTasks = document.getElementById('tasks');
+let listStore = document.querySelector('.list-store');
+let submitBtn = document.getElementById('submitBtn')
 
 let intervalId = setInterval(() => {
-
     let time = new Date();
     let month = time.getMonth() + 1;
     let todayDay = time.getDate();
@@ -18,7 +20,7 @@ let intervalId = setInterval(() => {
     setDay(todayDay);
     setDayOfWeek(dayOfWeek);
     addZeroToTime(hour, minute, second, timeContainer);
-    addZeroToTime(hour, minute, second, titleTime)
+    addZeroToTime(hour, minute, second, titleTime);
     setBg(hour);
 }, 900)
 
@@ -135,4 +137,17 @@ function setMonth(monthId) {
             break;
     }
     monthContainer.innerHTML = `${month}`;
+}
+
+submitBtn.addEventListener('click', () => {
+    let list = document.createElement('li');
+    listStore.appendChild(list);
+    let value = inputTasks.value;
+    list.innerHTML = value;
+    clearInputValue(inputTasks);
+});
+
+
+function clearInputValue(input) {
+    input.value = '';
 }
