@@ -113,7 +113,7 @@ h2{
     transition: 0.2s all;
 }
 
-.input-container .sbm:active{
+.input-container .sbm:focus{
     transform: rotateZ(180deg);
 }
 
