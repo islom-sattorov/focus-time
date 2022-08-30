@@ -6,7 +6,9 @@ let background = document.getElementById('bg');
 let titleTime = document.getElementById('titleTime');
 let inputTasks = document.getElementById('tasks');
 let listStore = document.querySelector('.list-store');
-let submitBtn = document.getElementById('submitBtn')
+let submitBtn = document.getElementById('submitBtn');
+let taskList = document.querySelectorAll('.task');
+
 
 let intervalId = setInterval(() => {
     let time = new Date();
@@ -142,17 +144,45 @@ function setMonth(monthId) {
 
 submitBtn.addEventListener('click', makeTask);
 
+let counter = 0;
+
 function makeTask() {
     if (inputTasks.value == false) {
         console.log("press something")
     } else {
         let list = document.createElement('li');
+        list.className = 'task';
         listStore.appendChild(list);
+        list.addEventListener('click', cancelTask);
+        list.addEventListener('dblclick', removeTask);
         let value = inputTasks.value;
         list.innerHTML = `${value}`;
-        clearInputValue(inputTasks)
+        clearInputValue(inputTasks);
+        counter++;
+    }
+    if (counter < 5) {
+        listStore.style.display = "flex";
+        listStore.style.flexDirection = "column";
+    } else if (counter >= 5) {
+        listStore.style.display = "grid";
+        listStore.style.gridTemplateColumns = "repeat(2,1fr)";
+    } else if (counter >= 10) {
+        submitBtn.disabled = true;
+        console.log("You add max count tasks");
+    } else if (counter < 10) {
+        submitBtn.disabled = false;
+        console.log("Store cleared");
     }
 
+}
+
+function cancelTask() {
+    this.style.textDecoration = "line-through";
+}
+
+function removeTask() {
+    this.remove();
+    counter--;
 }
 
 function clearInputValue(input) {
