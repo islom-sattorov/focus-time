@@ -159,19 +159,18 @@ function makeTask() {
         list.innerHTML = `${value}`;
         clearInputValue(inputTasks);
         counter++;
+        console.log(counter);
     }
     if (counter < 5) {
         listStore.style.display = "flex";
         listStore.style.flexDirection = "column";
-    } else if (counter >= 5) {
+    } else if (counter >= 5 && counter < 10) {
+        submitBtn.disabled = false;
         listStore.style.display = "grid";
         listStore.style.gridTemplateColumns = "repeat(2,1fr)";
-    } else if (counter >= 10) {
+    } else if (counter == 10) {
         submitBtn.disabled = true;
         console.log("You add max count tasks");
-    } else if (counter < 10) {
-        submitBtn.disabled = false;
-        console.log("Store cleared");
     }
 
 }
@@ -183,6 +182,18 @@ function cancelTask() {
 function removeTask() {
     this.remove();
     counter--;
+    console.log(counter);
+    if (counter < 5) {
+        listStore.style.display = "flex";
+        listStore.style.flexDirection = "column";
+    } else if (counter >= 5 && counter < 10) {
+        submitBtn.disabled = false;
+        listStore.style.display = "grid";
+        listStore.style.gridTemplateColumns = "repeat(2,1fr)";
+    } else if (counter == 10) {
+        submitBtn.disabled = true;
+        console.log("You add max count tasks");
+    }
 }
 
 function clearInputValue(input) {
