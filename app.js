@@ -139,14 +139,21 @@ function setMonth(monthId) {
     monthContainer.innerHTML = `${month}`;
 }
 
-submitBtn.addEventListener('click', () => {
-    let list = document.createElement('li');
-    listStore.appendChild(list);
-    let value = inputTasks.value;
-    list.innerHTML = value;
-    clearInputValue(inputTasks);
-});
 
+submitBtn.addEventListener('click', makeTask);
+
+function makeTask() {
+    if (inputTasks.value == false) {
+        console.log("press something")
+    } else {
+        let list = document.createElement('li');
+        listStore.appendChild(list);
+        let value = inputTasks.value;
+        list.innerHTML = `${value}`;
+        clearInputValue(inputTasks)
+    }
+
+}
 
 function clearInputValue(input) {
     input.value = '';

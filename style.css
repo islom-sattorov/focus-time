@@ -85,6 +85,34 @@ h2{
     font-size: 5rem;
     text-align: start;
     padding: 0 20px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.input-container{
+    display: flex;
+    width: 50%;
+    gap: 20px;
+    justify-content: center;
+}
+
+.input-container input{
+    width: 75%;
+}
+
+.input-container .sbm{
+    width: 15%;
+    font-weight: 800;
+    transition: 0.3s all;
+}
+
+.input-container .sbm:active{
+    transform: rotateZ(180deg);
+}
+
+
+ul li{
+    margin: 10px;
     border: none;
     background: rgba( 255, 255, 255, 0.05 );
     box-shadow: 0 10px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -92,6 +120,6 @@ h2{
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.09 );
-    margin: 20px auto;
-    width: 80%;
+    padding: 10px;
+    font-size: 3.6rem;
 }
