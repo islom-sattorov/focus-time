@@ -71,21 +71,21 @@ function setDayOfWeek(dayId) {
 }
 
 function addZeroToTime(h, m, s) {
-    timeContainer.innerHTML = `0${h}: 0${m}: 0${s}`;
+    timeContainer.innerHTML = `0${h} : 0${m} : 0${s}`;
     if (h >= 10 && m >= 10 && s >= 10) {
-        timeContainer.innerHTML = `${h}: ${m}: ${s}`;
+        timeContainer.innerHTML = `${h} : ${m} : ${s}`;
     } else if (h >= 10 && m >= 10 && s < 10) {
-        timeContainer.innerHTML = `${h}: ${m}: 0${s}`;
+        timeContainer.innerHTML = `${h} : ${m} : 0${s}`;
     } else if (h >= 10 && m < 10 && s < 10) {
-        timeContainer.innerHTML = `${h}: 0${m}: 0${s}`;
+        timeContainer.innerHTML = `${h} : 0${m} : 0${s}`;
     } else if (h < 10 && m < 10 && s < 10) {
-        timeContainer.innerHTML = `0${h}: 0${m}: 0${s}`;
+        timeContainer.innerHTML = `0${h} : 0${m} : 0${s}`;
     } else if (h >= 10 && m < 10 && s >= 10) {
-        timeContainer.innerHTML = `${h}: 0${m}: ${s}`;
+        timeContainer.innerHTML = `${h} : 0${m} : ${s}`;
     } else if (h < 10 && m >= 10 && s >= 10) {
-        timeContainer.innerHTML = `0${h}: ${m}: ${s}`;
+        timeContainer.innerHTML = `0${h} : ${m} : ${s}`;
     } else if (h < 10 && m < 10 && s >= 10) {
-        timeContainer.innerHTML = `0${h}: 0${m}: ${s}`;
+        timeContainer.innerHTML = `0${h} : 0${m} : ${s}`;
     }
 }
 

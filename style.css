@@ -28,6 +28,6 @@ body{
 .time{
     text-align: center;
     font-size: 10rem;
-    color: #fff;
-    /* box-shadow: 2px 2px 2px 1px #000; */
+    color: #f5f5f5;
+    text-shadow: 20px 20px 20px #000;
 }
