@@ -5,6 +5,7 @@ let todayContainer = document.querySelector('.today');
 let background = document.getElementById('bg');
 
 let intervalId = setInterval(() => {
+    let titleTime = document.getElementById('titleTime');
     let time = new Date();
     let month = time.getMonth() + 1;
     let todayDay = time.getDate();
@@ -15,7 +16,8 @@ let intervalId = setInterval(() => {
     setMonth(month);
     setDay(todayDay);
     setDayOfWeek(dayOfWeek);
-    addZeroToTime(hour, minute, second);
+    addZeroToTime(hour, minute, second, timeContainer);
+    addZeroToTime(hour, minute, second, titleTime)
     setBg(hour);
 }, 900)
 
@@ -70,22 +72,24 @@ function setDayOfWeek(dayId) {
     daysOfWeek.innerHTML = `${day}`;
 }
 
-function addZeroToTime(h, m, s) {
-    timeContainer.innerHTML = `0${h} : 0${m} : 0${s}`;
+function addZeroToTime(h, m, s, item) {
+    item.innerHTML = `0${h} : 0${m} : 0${s}`;
     if (h >= 10 && m >= 10 && s >= 10) {
-        timeContainer.innerHTML = `${h} : ${m} : ${s}`;
+        item.innerHTML = `${h} : ${m} : ${s}`;
     } else if (h >= 10 && m >= 10 && s < 10) {
-        timeContainer.innerHTML = `${h} : ${m} : 0${s}`;
+        item.innerHTML = `${h} : ${m} : 0${s}`;
     } else if (h >= 10 && m < 10 && s < 10) {
-        timeContainer.innerHTML = `${h} : 0${m} : 0${s}`;
+        item.innerHTML = `${h} : 0${m} : 0${s}`;
     } else if (h < 10 && m < 10 && s < 10) {
-        timeContainer.innerHTML = `0${h} : 0${m} : 0${s}`;
+        item.innerHTML = `0${h} : 0${m} : 0${s}`;
     } else if (h >= 10 && m < 10 && s >= 10) {
-        timeContainer.innerHTML = `${h} : 0${m} : ${s}`;
+        item.innerHTML = `${h} : 0${m} : ${s}`;
     } else if (h < 10 && m >= 10 && s >= 10) {
-        timeContainer.innerHTML = `0${h} : ${m} : ${s}`;
+        item.innerHTML = `0${h} : ${m} : ${s}`;
     } else if (h < 10 && m < 10 && s >= 10) {
-        timeContainer.innerHTML = `0${h} : 0${m} : ${s}`;
+        item.innerHTML = `0${h} : 0${m} : ${s}`;
+    } else if (h < 10 && m >= 10 && s < 10) {
+        item.innerHTML = `0${h} : ${m} : 0${s}`
     }
 }
 
