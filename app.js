@@ -3,9 +3,10 @@ let monthContainer = document.querySelector('.month');
 let daysOfWeek = document.querySelector('.days-of-week');
 let todayContainer = document.querySelector('.today');
 let background = document.getElementById('bg');
+let titleTime = document.getElementById('titleTime');
 
 let intervalId = setInterval(() => {
-    let titleTime = document.getElementById('titleTime');
+
     let time = new Date();
     let month = time.getMonth() + 1;
     let todayDay = time.getDate();
