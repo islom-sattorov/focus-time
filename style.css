@@ -98,6 +98,13 @@ h2{
 
 .input-container input{
     width: 75%;
+    transition: 0.3s all;
+    font-size: 1.5rem;
+}
+
+.input-container input:focus{
+    border: 1px solid red;
+    font-size: 2rem;
 }
 
 .input-container .sbm{
@@ -109,7 +116,6 @@ h2{
 .input-container .sbm:active{
     transform: rotateZ(180deg);
 }
-
 
 ul li{
     margin: 10px;
